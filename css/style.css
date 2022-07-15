@@ -24,7 +24,6 @@ body {
 
 h1 {
     color: rgb(216, 213, 208);
-    ;
 }
 
 .header {
@@ -87,4 +86,16 @@ h1 {
 .btn-player:active, .btn-computer:active {
     box-shadow: none;
     transform: translateY(0);
+}
+
+.score {
+    display: flex;
+    font-family: 'Koulen', cursive;
+    font-size: 200px;
+    color: rgb(216, 213, 208);
+}
+
+.score div:nth-child(2) {
+    margin-left: 80px;
+    margin-right: 80px;
 }

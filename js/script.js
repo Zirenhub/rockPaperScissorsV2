@@ -7,6 +7,13 @@ function computerPlay() {
   return option;
 }
 
+function gameScore() {
+  let playerDisplay = document.getElementById('playerScore');
+  let computerDisplay = document.getElementById('computerScore');
+  playerDisplay.textContent = playerScore;
+  computerDisplay.textContent = computerScore;
+}
+
 // function game() {
 //   let round = 1;
 //   for (round; round <= 5; round++) {
@@ -99,10 +106,13 @@ for (let button = 0; button < playButtons.length; button++) {
         );
         playerScore += 1;
       } else {
+        playerColor.style.backgroundColor = '#e3ff45';
+        computerColor.style.backgroundColor = '#e3ff45';
         console.log("It's a tie");
       }
     }
     removeStyle();
     playRound();
+    gameScore();
   });
 }
