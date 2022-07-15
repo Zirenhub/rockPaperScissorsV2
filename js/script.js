@@ -44,12 +44,31 @@ for (let button = 0; button < playButtons.length; button++) {
         return 'scissors';
       }
     }
+    let computerSelection = computerPlay();
+    let playerSelection = playerPlay();
+
+    function removeStyle() {
+      let colorStylePly = document.querySelectorAll('.btn-player');
+      let colorStyleCom = document.querySelectorAll('.btn-computer');
+      for (let i = 0; i < colorStyleCom.length; i++) {
+        colorStyleCom[i].style.removeProperty('background-color');
+      }
+      for (let i = 0; i < colorStylePly.length; i++) {
+        colorStylePly[i].style.removeProperty('background-color');
+      }
+    }
+
     function playRound() {
-      let computerSelection = computerPlay();
       console.log('Computer selected : ' + computerSelection);
 
-      let playerSelection = playerPlay();
       console.log('You selected : ' + playerSelection);
+
+      let playerColor = document.getElementById(
+        `player-${playerSelection}`
+      );
+      let computerColor = document.getElementById(
+        `computer-${computerSelection}`
+      );
 
       if (
         (computerSelection === `rock` &&
@@ -59,8 +78,12 @@ for (let button = 0; button < playButtons.length; button++) {
         (computerSelection === `scissors` &&
           playerSelection === `paper`)
       ) {
-        alert(`Computer selected ${computerSelection}. You lost.`);
-        return (computerScore += 1);
+        computerColor.style.backgroundColor = '#3a86ff';
+        playerColor.style.backgroundColor = 'tomato';
+        console.log(
+          `Computer selected ${computerSelection}. You lost.`
+        );
+        computerScore += 1;
       } else if (
         (playerSelection === `paper` &&
           computerSelection === `rock`) ||
@@ -69,12 +92,17 @@ for (let button = 0; button < playButtons.length; button++) {
         (playerSelection === `rock` &&
           computerSelection === `scissors`)
       ) {
-        alert(`Computer selected ${computerSelection}. You win!`);
-        return (playerScore += 1);
+        playerColor.style.backgroundColor = '#3a86ff';
+        computerColor.style.backgroundColor = 'tomato';
+        console.log(
+          `Computer selected ${computerSelection}. You win!`
+        );
+        playerScore += 1;
       } else {
-        alert("It's a tie");
+        console.log("It's a tie");
       }
     }
+    removeStyle();
     playRound();
   });
 }
