@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Rock Paper Scissors!</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body>
-        <div class="header">
-            <h1 class="title">Rock Paper Scissors!</h1>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rock Paper Scissors!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="title">Rock Paper Scissors!</h1>
+    </div>
+    <div class="content">
+        <div class="player-btn">
+            <button title="Rock" class="btn-player" id="player-rock">✊</button>
+            <button title="Paper" class="btn-player" id="player-paper">✋</button>
+            <button title="Scissors" class="btn-player" id="player-scissors">✌️</button>
         </div>
-        <div class="content">
-            <div class="player-btn">
-                <button title="Rock" class="btn-player" id="player-rock">✊</button>
-                <button title="Paper" class="btn-player" id="player-paper">✋</button>
-                <button title="Scissors" class="btn-player" id="player-scissors">✌️</button>
-            </div>
+        <div class="score-container">
             <div class="score">
                 <div class="player-score" id="playerScore">
                     0
@@ -29,13 +32,34 @@
                     0
                 </div>
             </div>
-            <div class="computer-btn">
-                <button title="Rock" class="btn-computer" id="computer-rock">✊</button>
-                <button title="Paper" class="btn-computer" id="computer-paper">✋</button>
-                <button title="Scissors" class="btn-computer" id="computer-scissors">✌️</button>
+            <div class='game-round'>
+                <div class="round-number">
+                    Round
+                    <div id="roundNumber">
+                        1
+                    </div>
+                </div>
+                <div class="total-score">
+                    <div class="round-score-player" id="playerRoundScore">
+                        0
+                    </div>
+                    <div>
+                        :
+                    </div>
+                    <div class="round-score-computer" id="computerRoundScore">
+                        0
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="computer-btn">
+            <button title="Rock" class="btn-computer" id="computer-rock">✊</button>
+            <button title="Paper" class="btn-computer" id="computer-paper">✋</button>
+            <button title="Scissors" class="btn-computer" id="computer-scissors">✌️</button>
+        </div>
+    </div>
 
-        <script src="/js/script.js" async defer></script>
-    </body>
+    <script src="/js/script.js" async defer></script>
+</body>
+
 </html>

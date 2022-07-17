@@ -88,6 +88,13 @@ h1 {
     transform: translateY(0);
 }
 
+.score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .score {
     display: flex;
     font-family: 'Koulen', cursive;
@@ -98,4 +105,40 @@ h1 {
 .score div:nth-child(2) {
     margin-left: 80px;
     margin-right: 80px;
+}
+/*
+.player-score {
+    position: absolute;
+}
+
+.computer-score {
+    position: absolute;
+}
+*/
+.game-round {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-number {
+    color: rgb(216, 213, 208);
+    font-family: 'Koulen', cursive;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-score {
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(216, 216, 216);
+}
+
+#roundNumber {
+    margin-left: 10px;
 }

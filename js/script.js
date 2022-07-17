@@ -1,5 +1,6 @@
 let computerScore = 0;
 let playerScore = 0;
+let roundScore = 0;
 
 function computerPlay() {
   let options = ['rock', 'paper', 'scissors'];
@@ -7,11 +8,33 @@ function computerPlay() {
   return option;
 }
 
+let playerDisplay = document.getElementById('playerScore');
+let computerDisplay = document.getElementById('computerScore');
+let computerRoundScore = document.getElementById(
+  'computerRoundScore'
+);
+let playerRoundScore = document.getElementById('playerRoundScore');
+let roundNumber = document.getElementById('roundNumber');
+
 function gameScore() {
-  let playerDisplay = document.getElementById('playerScore');
-  let computerDisplay = document.getElementById('computerScore');
   playerDisplay.textContent = playerScore;
   computerDisplay.textContent = computerScore;
+  if (computerScore === 5) {
+    computerRoundScore.textContent =
+      parseInt(computerRoundScore.textContent || 0) + 1;
+    roundNumber.textContent =
+      parseInt(roundNumber.textContent || 0) + 1;
+    computerScore = 0;
+    playerScore = 0;
+  }
+  if (playerScore === 5) {
+    playerRoundScore.textContent =
+      parseInt(playerRoundScore.textContent || 0) + 1;
+    roundNumber.textContent =
+      parseInt(roundNumber.textContent || 0) + 1;
+    computerScore = 0;
+    playerScore = 0;
+  }
 }
 
 // function game() {
