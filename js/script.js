@@ -16,6 +16,47 @@ let computerRoundScore = document.getElementById(
 let playerRoundScore = document.getElementById('playerRoundScore');
 let roundNumber = document.getElementById('roundNumber');
 
+function winner() {
+  if (
+    roundNumber.textContent === '5' &&
+    computerRoundScore.textContent > playerRoundScore.textContent
+  ) {
+    const gameWinner = document.createElement('div');
+    gameWinner.className = 'round-number';
+    const gameWinnerAnn = document.createTextNode(
+      `Computer wins!! ${computerRoundScore.textContent} vs ${playerRoundScore.textContent}`
+    );
+    gameWinner.appendChild(gameWinnerAnn);
+    const currentDiv = document.getElementById('totalScore');
+    let parentDiv = currentDiv.parentNode;
+    parentDiv.insertBefore(gameWinner, currentDiv.nextSibling);
+  } else if (
+    roundNumber.textContent === '5' &&
+    playerRoundScore.textContent > computerRoundScore.textContent
+  ) {
+    const gameWinner = document.createElement('div');
+    gameWinner.className = 'round-number';
+    const gameWinnerAnn = document.createTextNode(
+      `Human wins!! ${playerRoundScore.textContent} vs ${computerRoundScore.textContent}`
+    );
+    gameWinner.appendChild(gameWinnerAnn);
+    const currentDiv = document.getElementById('totalScore');
+    let parentDiv = currentDiv.parentNode;
+    parentDiv.insertBefore(gameWinner, currentDiv.nextSibling);
+  } else if (
+    roundNumber.textContent === '5' &&
+    playerRoundScore.textContent === computerRoundScore.textContent
+  ) {
+    const gameWinner = document.createElement('div');
+    gameWinner.className = 'round-number';
+    const gameWinnerAnn = document.createTextNode("It's a tie!");
+    gameWinner.appendChild(gameWinnerAnn);
+    const currentDiv = document.getElementById('totalScore');
+    let parentDiv = currentDiv.parentNode;
+    parentDiv.insertBefore(gameWinner, currentDiv.nextSibling);
+  }
+}
+
 function gameScore() {
   playerDisplay.textContent = playerScore;
   computerDisplay.textContent = computerScore;
@@ -24,6 +65,7 @@ function gameScore() {
       parseInt(computerRoundScore.textContent || 0) + 1;
     roundNumber.textContent =
       parseInt(roundNumber.textContent || 0) + 1;
+    winner();
     computerScore = 0;
     playerScore = 0;
   }
@@ -32,6 +74,7 @@ function gameScore() {
       parseInt(playerRoundScore.textContent || 0) + 1;
     roundNumber.textContent =
       parseInt(roundNumber.textContent || 0) + 1;
+    winner();
     computerScore = 0;
     playerScore = 0;
   }
