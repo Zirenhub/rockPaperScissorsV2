@@ -15,6 +15,7 @@ let computerRoundScore = document.getElementById(
 );
 let playerRoundScore = document.getElementById('playerRoundScore');
 let roundNumber = document.getElementById('roundNumber');
+let resetButton = document.getElementById('resetBtn');
 
 function winner() {
   if (
@@ -23,6 +24,7 @@ function winner() {
   ) {
     const gameWinner = document.createElement('div');
     gameWinner.className = 'round-number';
+    gameWinner.setAttribute('id', 'winnerText');
     const gameWinnerAnn = document.createTextNode(
       `Computer wins!! ${computerRoundScore.textContent} vs ${playerRoundScore.textContent}`
     );
@@ -36,6 +38,7 @@ function winner() {
   ) {
     const gameWinner = document.createElement('div');
     gameWinner.className = 'round-number';
+    gameWinner.setAttribute('id', 'winnerText');
     const gameWinnerAnn = document.createTextNode(
       `Human wins!! ${playerRoundScore.textContent} vs ${computerRoundScore.textContent}`
     );
@@ -49,6 +52,7 @@ function winner() {
   ) {
     const gameWinner = document.createElement('div');
     gameWinner.className = 'round-number';
+    gameWinner.setAttribute('id', 'winnerText');
     const gameWinnerAnn = document.createTextNode("It's a tie!");
     gameWinner.appendChild(gameWinnerAnn);
     const currentDiv = document.getElementById('totalScore');
@@ -78,6 +82,22 @@ function gameScore() {
     computerScore = 0;
     playerScore = 0;
   }
+}
+
+function reset() {
+  resetButton.addEventListener('click', () => {
+    if (roundNumber.textContent >= 5) {
+      const removeText = document.getElementById('winnerText');
+      removeText.remove();
+    }
+    playerScore = 0;
+    playerDisplay.textContent = 0;
+    computerScore = 0;
+    computerDisplay.textContent = 0;
+    computerRoundScore.textContent = 0;
+    playerRoundScore.textContent = 0;
+    roundNumber.textContent = 1;
+  });
 }
 
 // function game() {
@@ -180,5 +200,6 @@ for (let button = 0; button < playButtons.length; button++) {
     removeStyle();
     playRound();
     gameScore();
+    reset();
   });
 }

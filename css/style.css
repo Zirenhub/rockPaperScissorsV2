@@ -54,7 +54,8 @@ h1 {
     margin-right: 140px;
 }
 
-.btn-player, .btn-computer {
+.btn-player,
+.btn-computer {
     height: 70px;
     width: 70px;
     background-color: #3b3b3b;
@@ -74,16 +75,19 @@ h1 {
     will-change: transform;
 }
 
-.btn-player:disabled, .btn-computer:disabled {
+.btn-player:disabled,
+.btn-computer:disabled {
     pointer-events: none;
 }
 
-.btn-player:hover, .btn-computer:hover {
+.btn-player:hover,
+.btn-computer:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
 
-.btn-player:active, .btn-computer:active {
+.btn-player:active,
+.btn-computer:active {
     box-shadow: none;
     transform: translateY(0);
 }
@@ -106,6 +110,7 @@ h1 {
     margin-left: 80px;
     margin-right: 80px;
 }
+
 /*
 .player-score {
     position: absolute;
@@ -116,7 +121,7 @@ h1 {
 }
 */
 .game-round {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -141,4 +146,39 @@ h1 {
 
 #roundNumber {
     margin-left: 10px;
+}
+
+.restart-btn {
+    margin-top: 10px;
+}
+
+.button-55 {
+    align-self: center;
+    background-color: rgb(247, 247, 247);
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
+    cursor: pointer;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-55:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
